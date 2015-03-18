@@ -15,3 +15,8 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - by using the `provide` method in each view, i.e., `<% provide :title, "Page name" %>`
 - by editing the title tag in `app/views/layouts/application.html.erb`, i.e., `<title>PoliRun | <%= yield(:title) %></title>`
 - learn more about `provide` at [http://api.rubyonrails.org/classes/ActionView/Helpers/CaptureHelper.html#method-i-provide](http://api.rubyonrails.org/classes/ActionView/Helpers/CaptureHelper.html#method-i-provide)
+
+4) Add an helper named `full_title`, to avoid wrong rendering if a page title is not declared
+
+- in `app/helpers/application_helper.rb`, since it can be useful for every views in the site
+- by editing the title tag in `app/views/layouts/application.html.erb`, i.e., `<title><%= full_title(yield(:title)) %></title>`
