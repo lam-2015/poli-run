@@ -26,3 +26,5 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - in the `config` folder
 - update the links in the home accordingly
 - remove `index.html` from the public folder
+
+6) Add a faq page to the Pages controller and set a proper route

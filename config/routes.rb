@@ -6,6 +6,7 @@ PoliRun::Application.routes.draw do
   # named routes for static pages
   match '/about', to: 'pages#about'
   match '/contact', to: 'pages#contact'
+  match '/faq', to: 'pages#faq'
 
 
   # The priority is based upon order of creation:
