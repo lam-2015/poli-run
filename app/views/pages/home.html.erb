@@ -1,8 +1,12 @@
+<% #Provide the page title in a symbol to application.html.erb to avoid duplication %>
 <% provide :title, "Home" %>
 
-<h1>PoliRun</h1>
+<div class="jumbotron text-center">
+  <h1>Welcome to PoliRun</h1>
 
-<% # the following line is the equivalent of <a href="#">About</a> %>
-<%= link_to "About", about_path %>
-<%= link_to "Contact", contact_path %>
-<%= link_to "Faq", faq_path %>
+  <h2>
+    Sign up or login to start using <%= link_to "PoliRun", '#'%>.
+  </h2>
+
+  <%= link_to "Sign up now!", '#', class:"btn btn-primary btn-lg", role:"button"%>
+</div>

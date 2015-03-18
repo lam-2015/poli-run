@@ -28,3 +28,14 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - remove `index.html` from the public folder
 
 6) Add a faq page to the Pages controller and set a proper route
+
+### Applying some styles... (pre LAB 3) ###
+
+1) Fill all the views with some contents
+
+2) Add `bootstrap-sass` gem (version 3.1.1.0) to include the Bootstrap framework with Sass support [http://getbootstrap.com/](http://getbootstrap.com/)
+
+- update the `Gemfile`
+- run `bundle install`
+
+3) Add and fill a custom SCSS file in `app/assets/stylesheets`
