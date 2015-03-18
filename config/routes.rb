@@ -1,9 +1,12 @@
 PoliRun::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/about"
+  # route for the homepage
+  root to: 'pages#home'
 
-  get "pages/contact"
+  # named routes for static pages
+  match '/about', to: 'pages#about'
+  match '/contact', to: 'pages#contact'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

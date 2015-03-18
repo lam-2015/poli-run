@@ -20,3 +20,9 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 
 - in `app/helpers/application_helper.rb`, since it can be useful for every views in the site
 - by editing the title tag in `app/views/layouts/application.html.erb`, i.e., `<title><%= full_title(yield(:title)) %></title>`
+
+5) Update the `routes.rb` file according to the table reported in Exercise 4
+
+- in the `config` folder
+- update the links in the home accordingly
+- remove `index.html` from the public folder
