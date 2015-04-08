@@ -60,3 +60,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 5) Annotate the User model to show a little bit more information
 
 - `bundle exec annotate` (or add a new configuration of type *Gem Command* from the RubyMine menu *Run > Edit Configurations...*)
+
+6) Add debug information in `application.html.erb`, by using the `debug` method
+
+- edit the custom stylesheet to improve the rendering of the debug box
