@@ -39,3 +39,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - run `bundle install`
 
 3) Add and fill a custom SCSS file in `app/assets/stylesheets`
+
+### User Modeling (LAB 3) ###
+
+1) Move HTML shim, header and footer code in three partials (placed in `app/views/layouts/`)
