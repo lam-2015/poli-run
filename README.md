@@ -51,3 +51,8 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 3) Migrate the model to the database (i.e., create the table and columns corresponding to the User model)
 
 - `bundle exec rake db:migrate` (or from the RubyMine menu *Tools > Run Rake Tasks...*)
+
+4) Add some gems to the Gemfile (and perform a `bundle install`)
+
+- `annotate` (version 2.5.0) to show some annotations in the Rails models
+- `bcrypt-ruby` (already present, but commented) to have some state-of-the-art hash functions available in Rails
