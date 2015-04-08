@@ -56,3 +56,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 
 - `annotate` (version 2.5.0) to show some annotations in the Rails models
 - `bcrypt-ruby` (already present, but commented) to have some state-of-the-art hash functions available in Rails
+
+5) Annotate the User model to show a little bit more information
+
+- `bundle exec annotate` (or add a new configuration of type *Gem Command* from the RubyMine menu *Run > Edit Configurations...*)
