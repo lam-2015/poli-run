@@ -64,3 +64,8 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 6) Add debug information in `application.html.erb`, by using the `debug` method
 
 - edit the custom stylesheet to improve the rendering of the debug box
+
+7) Add some validations to the User model
+
+- `name` must be always present (`presence: true`) and it must have a maximum length of 50 characters (`length: { maximum: 50 }`)
+- `email` must be always present, unique (`uniqueness: { case_sensitive: false }`) and with a specific defined format (`format: { with: VALID_EMAIL_REGEX }`)
