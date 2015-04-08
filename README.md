@@ -43,3 +43,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 ### User Modeling (LAB 3) ###
 
 1) Move HTML shim, header and footer code in three partials (placed in `app/views/layouts/`)
+
+2) Generate the User model, with two attributes: name and email
+
+- `rails generate model User name:string email:string` (or from the RubyMine menu *Tools > Run Rails Generator...*)
