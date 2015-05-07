@@ -89,3 +89,5 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - `rails generate controller Users new` (or from the RubyMine menu *Tools > Run Rails Generator...*)
 
 2) Update the `routes.rb` file for mapping the `new` action to `/signup` (i.e., create a named route)
+
+3) Add some contents to the newly created view and update the homepage link for registering new users
