@@ -91,3 +91,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 2) Update the `routes.rb` file for mapping the `new` action to `/signup` (i.e., create a named route)
 
 3) Add some contents to the newly created view and update the homepage link for registering new users
+
+4) Add the default routes for the Users controller
+
+- `resources :users` in `config/routes.rb`
