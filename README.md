@@ -114,3 +114,10 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 
 - in the database: `bundle exec rake db:reset` (or from the RubyMine menu *Tools > Run Rake Tasks...*)
 - in the code: delete the line in the `new` action of the Users controller
+
+3) Add the sign up form in the `new.html.erb` view and update the corresponding action
+
+- by using the `form_for` helper method, which takes in an Active Record object and constructs a form using the object's attributes
+- by adding `@user = User.new` to the `new` action of the Users controller
+
+4) Update the stylesheet for a better rendering of the form
