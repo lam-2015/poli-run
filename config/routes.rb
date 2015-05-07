@@ -1,5 +1,7 @@
 PoliRun::Application.routes.draw do
 
+  get "users/new"
+
   # route for the homepage
   root to: 'pages#home'
 

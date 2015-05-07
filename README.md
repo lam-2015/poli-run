@@ -81,3 +81,9 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - add the `has_secure_password` method to the User model, to use the authentication system of Rails
 - make accessible the two virtual attributes added by `has_secure_password`: `password` and `password_confirmation`
 - add a minimum length validation (8 chars) to the `password` attribute
+
+### Getting started with the User controller... (pre LAB 4) ###
+
+1) Create a Users controller for the signup page
+
+- `rails generate controller Users new` (or from the RubyMine menu *Tools > Run Rails Generator...*)
