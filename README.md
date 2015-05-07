@@ -95,3 +95,5 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 4) Add the default routes for the Users controller
 
 - `resources :users` in `config/routes.rb`
+
+5) Add a user in the database, by editing the `new` action in the Users controller
