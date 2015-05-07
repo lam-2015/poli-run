@@ -131,3 +131,8 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 6) Update the sign up form to show error messages (if any)
 
 - add a `_error_messages.html.erb` partial (in `app/views/shared`) to store the code for showing error messages of a generic form
+
+7) Add the flash to welcome newly registered users to our site
+
+- insert an area to show the flash message in `application.html.erb`
+- fill the flash if the user signup has been successful (i.e., in the Users controller)

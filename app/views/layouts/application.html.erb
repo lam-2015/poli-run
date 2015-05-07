@@ -4,7 +4,9 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <% # method to automatically prevent Cross-Site Request Forgery %>
   <%= csrf_meta_tags %>
+  <% # partial for the HTML shim %>
   <%= render "layouts/shim" %>
 </head>
 <body>
@@ -14,6 +16,14 @@
 <div class="container">
 
   <!-- Page content -->
+  <% # the flash message; it supports different type of messages %>
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= value %>
+      </div>
+  <% end %>
+
   <%= yield %>
 
   <!-- Footer -->

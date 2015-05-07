@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       # handle a successful save
+      flash[:success] = 'Welcome to PoliRun!'
       redirect_to @user
     else
       render 'new'
