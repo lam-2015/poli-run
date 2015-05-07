@@ -121,3 +121,9 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - by adding `@user = User.new` to the `new` action of the Users controller
 
 4) Update the stylesheet for a better rendering of the form
+
+5) Add the `create` action to the Users controller (it is needed for the sign up form)
+
+- create a new user with the information inserted in the form
+- if it is possible to save such a user into the database, go to the user profile page
+- otherwise, go back to the sign up form
