@@ -259,3 +259,11 @@ a random string, safe for use in URIs, of length 16
 - add the `destroy` action in the Users controller
 - update the `signed_in_user` filter to include the `destroy` action
 - add a before filter named `admin_user` to ensure that only admin can delete users
+
+### User Posts (LAB 6) ###
+
+1) Create the Post model, with three attributes: title, content and user_id
+
+- `rails generate model Post title:string content:string user_id:integer` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- in the migration, add an index to help retrieve all the posts associated to a given user in reverse order of creation
+- migrate such updates to the database
