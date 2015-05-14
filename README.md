@@ -192,3 +192,8 @@ a random string, safe for use in URIs, of length 16
 11) Update the header navbar
 
 12) Update the sign up method (i.e., the `create` action in the Users controller) to perform a login if the registration was successful
+
+13) Write the `destroy` action in the Sessions controller for signing out
+
+- call the `sign out` method of SessionsHelper
+- redirect to the homepage
