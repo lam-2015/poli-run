@@ -309,3 +309,10 @@ a random string, safe for use in URIs, of length 16
 - update the homepage to show different content whether a user is logged in
 - add a form for the creation of a new post in the homepage (`home.html.erb`) and update the corresponding action in the Pages controller
 - update the `error_messages` partial to handle errors coming from various objects, not only from User
+
+11) Add the required action and update the views for deleting an existing post (each user can delete her own posts, only)
+
+- add a `destroy` action in the Posts controller to delete a post
+- add a link for deleting a post in the `post` partial (in `app/views/posts`), similar to the one used for deleting a user
+- add a `before_filter` in the Posts controller to check if the user is allowed to delete the desired post (`correct_user`)
+- define the `correct_user` private method in the Post controller
