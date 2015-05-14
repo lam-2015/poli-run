@@ -181,3 +181,10 @@ a random string, safe for use in URIs, of length 16
 - we need to ask for email (the username in our social network) and password
 - since a session is not a Model, define the form as `form_for(:session, url:session_path)`, where the former element is the resource name and the latter is the corresponding URL
 - submit the form will result in `params[:session][:email]` and `params[:session][:password]`, to be used in the `create` action
+
+10) Write the `create` action in the Sessions controller
+
+- get the registered user starting from the email given in the sign in form (`params[:session][:email]`)
+- check if the user exists and if the given password is correct (`if user && user.authenticate(params[:session][:password])`)
+- handle a successful login (call the `sign_in` method declared in the `SessionsHelper`)
+- handle a failed login (show an error message and go back to the login form)
