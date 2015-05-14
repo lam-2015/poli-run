@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
   # check if the user is logged in (e.g., for editing only her own information)
-  before_filter :signed_in_user, only: [:edit, :update, :index]
+  before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
   # check if the current user is the correct user (e.g., for editing only her own information)
   before_filter :correct_user, only: [:edit, :update]
+  # check if the current user is also an admin
+  before_filter :admin_user, only: :destroy
 
   def new
     # init the user variable to be used in the sign up form
@@ -63,6 +65,13 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
   end
 
+  def destroy
+    # delete the user starting from her id
+    User.find(params[:id]).destroy
+    flash[:success] = 'User deleted!'
+    redirect_to users_path
+  end
+
   private
 
   # Redirect the user to the Sign in page if she is not logged in
@@ -76,6 +85,11 @@ class UsersController < ApplicationController
     # init the user object to be used in the edit and update actions
     @user = User.find(params[:id])
     redirect_to root_path unless current_user?(@user) # the current_user?(user) method is defined in the SessionsHelper
+  end
+
+  # Redirect the user to the home page if she is not an admin (e.g., if the user cannot perform an admin-only operation)
+  def admin_user
+    redirect_to root_path unless current_user.admin?
   end
 
 end

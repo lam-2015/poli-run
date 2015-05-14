@@ -252,3 +252,10 @@ a random string, safe for use in URIs, of length 16
 - update the `sample_data.rake` task to assign admin privileges to the first user
 - clean the database content (`bundle exec rake db:reset`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
 - execute the updated task (`bundle exec rake db:populate`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+
+22) Let the admin delete other users
+
+- edit the `index` view to add a delete link near each user
+- add the `destroy` action in the Users controller
+- update the `signed_in_user` filter to include the `destroy` action
+- add a before filter named `admin_user` to ensure that only admin can delete users
