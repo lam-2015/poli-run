@@ -236,3 +236,10 @@ a random string, safe for use in URIs, of length 16
 - write a rake task (in `lib/tasks/sample_data.rake`) for generating 100 users
 - clean the database content (`bundle exec rake db:reset`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
 - execute the newly created task (`bundle exec rake db:populate`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+
+20) Add pagination to the `index` view and action
+
+- add the `will_paginate` (version 3.0.3) and the `bootstrap-will_paginate` (version 0.0.10) gems
+- perform a `bundle install`
+- edit the `index` view to include the `will_paginate` method (it shows the link to the next and previous pages)
+- edit the `index` action to properly prepare data for the corresponding view (by using the `paginate` method in retrieving users)

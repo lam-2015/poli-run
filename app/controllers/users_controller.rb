@@ -56,8 +56,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    # get all the users from the database
-    @users = User.all
+    # get all the users from the database - without pagination
+    # @users = User.all
+
+    # get all the users from the database - with pagination
+    @users = User.paginate(page: params[:page])
   end
 
   private
