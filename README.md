@@ -197,3 +197,8 @@ a random string, safe for use in URIs, of length 16
 
 - call the `sign out` method of SessionsHelper
 - redirect to the homepage
+
+14) Create the `edit` action and view for the Users controller
+
+- please note that the `edit` view is almost identical to the `new` view
+- let the user change her Gravatar, too
