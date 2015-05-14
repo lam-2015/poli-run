@@ -148,3 +148,10 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 2) Add a migration to associate a user to its remember token (to be added in the traditional Rails session)
 
 - generate/migrate a migration to add a column and a index for the remember token in the users table
+
+3) Update the User model to handle the remember token
+
+- add a callback method to create the remember token (`before_save :create_remember_token`); in this way, Rails will look for
+a `create_remember_token` method and will run it before saving the user
+- define such a method as private and generate the token by using the `SecureRandom.urlsafe_base64` function; the method generates
+a random string, safe for use in URIs, of length 16
