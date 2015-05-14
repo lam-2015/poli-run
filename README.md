@@ -243,3 +243,12 @@ a random string, safe for use in URIs, of length 16
 - perform a `bundle install`
 - edit the `index` view to include the `will_paginate` method (it shows the link to the next and previous pages)
 - edit the `index` action to properly prepare data for the corresponding view (by using the `paginate` method in retrieving users)
+
+21) Add the admin user
+
+- generate a new migration to add the admin column in the database (with a boolean value): `add_admin_to_users`
+- update the newly generated migration to set the admin field to false, by default
+- migrate!
+- update the `sample_data.rake` task to assign admin privileges to the first user
+- clean the database content (`bundle exec rake db:reset`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+- execute the updated task (`bundle exec rake db:populate`, or from the RubyMine menu *Tools > Run Rake Tasks...*)

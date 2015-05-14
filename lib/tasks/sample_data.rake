@@ -6,6 +6,8 @@ namespace :db do
                          email: "luigi.derussis@polito.it",
                          password: "lam-2015",
                          password_confirmation: "lam-2015")
+    admin.toggle!(:admin)
+    puts "... the admin user has been created"
     99.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@corsa.polito.it"
@@ -15,6 +17,6 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
-    puts "... 100 users have been created"
+    puts "... 99 users have been created"
   end
 end
