@@ -188,3 +188,5 @@ a random string, safe for use in URIs, of length 16
 - check if the user exists and if the given password is correct (`if user && user.authenticate(params[:session][:password])`)
 - handle a successful login (call the `sign_in` method declared in the `SessionsHelper`)
 - handle a failed login (show an error message and go back to the login form)
+
+11) Update the header navbar
