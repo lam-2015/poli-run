@@ -144,3 +144,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 - create `sessions_helper.rb` in `app/helpers`
 - add `include SessionsHelper` in `app/controllers/application_controller.rb`
 - define a method named `handle_unverified_request` to prevent cross-site request forgery attacks in `application_controller.rb`
+
+2) Add a migration to associate a user to its remember token (to be added in the traditional Rails session)
+
+- generate/migrate a migration to add a column and a index for the remember token in the users table
