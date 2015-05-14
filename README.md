@@ -164,3 +164,14 @@ a random string, safe for use in URIs, of length 16
 - `sign_out`: clear the current user instance variable and delete the corresponding cookie, thus signing out the user
 
 5) Call the `sign_out` method in the ApplicationController (`handle_unverified_request` method)
+
+6) Generate a Sessions controller and a `new.html.erb` view
+
+- `rails generate controller Sessions new` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+
+7) Update routes to implement the session as a RESTful resource
+
+- add `match '/signin', to: 'sessions#new'` and `match '/signout, to: 'sessions#destroy', via: :delete`
+- add `resources :sessions, only: [:new, :create, :destroy]`
+
+8) Fill the Sessions controller with the required (empty) actions (new, create and destroy)

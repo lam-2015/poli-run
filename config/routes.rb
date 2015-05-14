@@ -10,8 +10,15 @@ PoliRun::Application.routes.draw do
 
   match '/signup', to: 'users#new'
 
+  match '/signin', to: 'sessions#new'
+  # signout should be performed by using the HTTP DELETE request
+  match '/signout', to: 'sessions#destroy', via: :delete
+
   # default routes for the Users controller
   resources :users
+
+  # default routes for the Sessions controller (only new, create and destroy)
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
