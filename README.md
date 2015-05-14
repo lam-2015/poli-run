@@ -190,3 +190,5 @@ a random string, safe for use in URIs, of length 16
 - handle a failed login (show an error message and go back to the login form)
 
 11) Update the header navbar
+
+12) Update the sign up method (i.e., the `create` action in the Users controller) to perform a login if the registration was successful
