@@ -175,3 +175,9 @@ a random string, safe for use in URIs, of length 16
 - add `resources :sessions, only: [:new, :create, :destroy]`
 
 8) Fill the Sessions controller with the required (empty) actions (new, create and destroy)
+
+9) Fill the view for the signin form (i.e., `app/views/sessions/new.html.erb`)
+
+- we need to ask for email (the username in our social network) and password
+- since a session is not a Model, define the form as `form_for(:session, url:session_path)`, where the former element is the resource name and the latter is the corresponding URL
+- submit the form will result in `params[:session][:email]` and `params[:session][:password]`, to be used in the `create` action
