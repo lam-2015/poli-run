@@ -11,5 +11,16 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :content, :title, :user_id
+  # only content and title must be accessible, in order to avoid manual (and wrong) associations between posts and users
+  attr_accessible :content, :title
+
+  # user_id must be present while creating a new post...
+  validates :user_id, presence: true
+
+  # title must be present and longer than 5 chars
+  validates :content, presence: true, length: {minimum: 5}
+
+  # content must be present and not longer than 500 chars
+  validates :content, presence: true, length: {maximum: 500}
+
 end

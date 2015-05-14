@@ -267,3 +267,10 @@ a random string, safe for use in URIs, of length 16
 - `rails generate model Post title:string content:string user_id:integer` (or from the RubyMine menu *Tools > Run Rails Generator...*)
 - in the migration, add an index to help retrieve all the posts associated to a given user in reverse order of creation
 - migrate such updates to the database
+
+2) Update the Post model
+
+- by removing `user_id` from the accessible attributes (we don't want manual - and possibly wrong - associations between posts and users)
+- by validating the presence of `user_id`
+- by validating the presence and the length of `title` (longer than 5 chars)
+- by validating the presence and the length of `content` (not longer than 500 chars)
