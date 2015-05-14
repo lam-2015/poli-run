@@ -228,3 +228,11 @@ a random string, safe for use in URIs, of length 16
 - update the `gravatar_for` helper to show different image sizes
 - add some custom SCSS to `custom.css.scss`
 - update the corresponding link in the header
+
+19) Generate some sample users
+
+- add the `faker` gem (version 1.0.1) to the project
+- perform a `bundle install`
+- write a rake task (in `lib/tasks/sample_data.rake`) for generating 100 users
+- clean the database content (`bundle exec rake db:reset`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
+- execute the newly created task (`bundle exec rake db:populate`, or from the RubyMine menu *Tools > Run Rake Tasks...*)
