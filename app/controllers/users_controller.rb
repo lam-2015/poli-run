@@ -29,6 +29,9 @@ class UsersController < ApplicationController
   def show
     # get the user with id :id (got from the URL)
     @user = User.find(params[:id])
+
+    # get and paginate the posts associated to the given user
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def edit

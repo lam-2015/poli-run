@@ -18,5 +18,15 @@ namespace :db do
                    password_confirmation: password)
     end
     puts "... 99 users have been created"
+
+    # generate 50 fake posts for the first 10 users
+    users = User.all(limit: 10)
+    50.times do
+      post_title = Faker::Lorem.sentence(3)
+      post_content = Faker::Lorem.paragraph
+      users.each { |user| user.posts.create!(title: post_title, content: post_content )}
+    end
+    puts "... 50 posts for the first 10 users have been created"
+
   end
 end
