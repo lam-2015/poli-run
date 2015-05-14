@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # check if the user is logged in (e.g., for editing only her own information)
-  before_filter :signed_in_user, only: [:edit, :update]
+  before_filter :signed_in_user, only: [:edit, :update, :index]
   # check if the current user is the correct user (e.g., for editing only her own information)
   before_filter :correct_user, only: [:edit, :update]
 
@@ -53,6 +53,11 @@ class UsersController < ApplicationController
       # handle a failed update
       render 'edit'
     end
+  end
+
+  def index
+    # get all the users from the database
+    @users = User.all
   end
 
   private
