@@ -212,3 +212,11 @@ a random string, safe for use in URIs, of length 16
 - it is the action called after the edit form submission
 - get the updated user information from the edit form (`params[:user]`)
 - check if the update was successful and handle success and fail cases
+
+17) Right now, everyone can edit user information, so we should implement some controls
+
+- add a filter to the Users controller: before performing the edit and update actions, check if the user is signed in (`before_filter :signed_in_user, only: [:edit, :update]`)
+- add a filter to the Users controller: before performing the edit and update actions , check if the current user is the "right" user (`before_filter :correct_user, only: [:edit, :update]`)
+- add the two (private) methods declared in the before filters in the Users controller (i.e., `signed_in_user` and `correct_user`)
+- add another helper method to the SessionsHelper, : check if the user for which the editing actions are called is also the current user
+- update the `edit` and `update` actions to remove a useless `@user` assignment

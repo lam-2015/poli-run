@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  # check if the user is logged in (e.g., for editing only her own information)
+  before_filter :signed_in_user, only: [:edit, :update]
+  # check if the current user is the correct user (e.g., for editing only her own information)
+  before_filter :correct_user, only: [:edit, :update]
+
   def new
     # init the user variable to be used in the sign up form
     @user = User.new
@@ -25,11 +30,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    # intentionally left empty since the correct_user method (called by before_filter) initialize the @user object
+
+    # without the correct_user method, this action should contain:
+    # @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
+    # the correct_user method (called by before_filter) initialize the @user object
+    # without the correct_user method, this action should also contain:
+    # @user = User.find(params[:id])
+
     # check if the update was successfully
     if @user.update_attributes(params[:user])
       # handle a successful update
@@ -42,6 +53,21 @@ class UsersController < ApplicationController
       # handle a failed update
       render 'edit'
     end
+  end
+
+  private
+
+  # Redirect the user to the Sign in page if she is not logged in
+  def signed_in_user
+    redirect_to signin_url, notice: "Please sign in" unless signed_in?
+    # notice: "Please sign in" is the same of flash[:notice] = "Please sign in"
+  end
+
+  # Take the current user information (id) and redirect her to the home page if she is not the 'right' user
+  def correct_user
+    # init the user object to be used in the edit and update actions
+    @user = User.find(params[:id])
+    redirect_to root_path unless current_user?(@user) # the current_user?(user) method is defined in the SessionsHelper
   end
 
 end

@@ -9,6 +9,8 @@ module SessionHelper
   end
 
   # Set current user method: set the user performing the sign in as the current user
+  #
+  # user - The User to be used as current user in the session
   def current_user=(user)
     @current_user = user
   end
@@ -27,6 +29,13 @@ module SessionHelper
   def sign_out
     self.current_user = nil
     cookies.delete(:remember_token)
+  end
+
+  # Check if the given user is also the current user (for authorization purposes)
+  #
+  # user - The User to check the authorization for
+  def current_user?(user)
+    user == current_user
   end
 
 end
