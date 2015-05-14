@@ -77,12 +77,6 @@ class UsersController < ApplicationController
 
   private
 
-  # Redirect the user to the Sign in page if she is not logged in
-  def signed_in_user
-    redirect_to signin_url, notice: "Please sign in" unless signed_in?
-    # notice: "Please sign in" is the same of flash[:notice] = "Please sign in"
-  end
-
   # Take the current user information (id) and redirect her to the home page if she is not the 'right' user
   def correct_user
     # init the user object to be used in the edit and update actions

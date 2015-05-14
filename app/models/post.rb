@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
 
   # title must be present and longer than 5 chars
-  validates :content, presence: true, length: {minimum: 5}
+  validates :title, presence: true, length: {minimum: 5}
 
   # content must be present and not longer than 500 chars
   validates :content, presence: true, length: {maximum: 500}

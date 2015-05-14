@@ -179,6 +179,11 @@ input {
   }
 }
 
+.btn-home {
+  max-width: 30%;
+  @extend .pull-right;
+}
+
 /* miscellaneous */
 
 .debug_dump {

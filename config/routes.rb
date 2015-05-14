@@ -20,6 +20,9 @@ PoliRun::Application.routes.draw do
   # default routes for the Sessions controller (only new, create and destroy)
   resources :sessions, only: [:new, :create, :destroy]
 
+  # default routes for the Posts controller (only create and destroy - other operations will be done via the Users controller)
+  resources :posts, only: [:create, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -139,7 +139,7 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 
 ### Handling Users (LAB 5) ###
 
-1) Create a SessionHelper and include it in the `ApplicationController` (helpers are automatically added to views, but not to controllers)
+1) Create a SessionsHelper and include it in the `ApplicationController` (helpers are automatically added to views, but not to controllers)
 
 - create `sessions_helper.rb` in `app/helpers`
 - add `include SessionsHelper` in `app/controllers/application_controller.rb`
@@ -291,3 +291,21 @@ a random string, safe for use in URIs, of length 16
 5) Add some custom SCSS for the post visualization
 
 6) Create some fake posts by editing the `sample_data.rake` task
+
+7) Add the `create` and `destroy` route for the Posts resource in `routes.rb`
+
+- we show posts through the Users controller, so we don't need any other route
+
+8) Create an (empty) Posts controller
+
+9) Only signed in users can create/delete a post
+
+- move the `signed_in_user` method from the Users controller to the `SessionsHelper`
+- add a `before_filter` to the Posts controller
+
+10) Add the required action and update the existing view to create a new post
+
+- add a `create` action in the Posts controller to build and save a post
+- update the homepage to show different content whether a user is logged in
+- add a form for the creation of a new post in the homepage (`home.html.erb`) and update the corresponding action in the Pages controller
+- update the `error_messages` partial to handle errors coming from various objects, not only from User
