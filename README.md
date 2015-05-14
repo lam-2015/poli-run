@@ -136,3 +136,11 @@ PoliRun is a prototype social network realized for the "Linguaggi e Ambienti Mul
 
 - insert an area to show the flash message in `application.html.erb`
 - fill the flash if the user signup has been successful (i.e., in the Users controller)
+
+### Handling Users (LAB 5) ###
+
+1) Create a SessionHelper and include it in the `ApplicationController` (helpers are automatically added to views, but not to controllers)
+
+- create `sessions_helper.rb` in `app/helpers`
+- add `include SessionsHelper` in `app/controllers/application_controller.rb`
+- define a method named `handle_unverified_request` to prevent cross-site request forgery attacks in `application_controller.rb`
