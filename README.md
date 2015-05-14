@@ -202,3 +202,13 @@ a random string, safe for use in URIs, of length 16
 
 - please note that the `edit` view is almost identical to the `new` view
 - let the user change her Gravatar, too
+
+15) Update the Settings link in the header
+
+- it should point to `edit_user_path(current_user)`
+
+16) Define the `update` action in the Users controller
+
+- it is the action called after the edit form submission
+- get the updated user information from the edit form (`params[:user]`)
+- check if the update was successful and handle success and fail cases
