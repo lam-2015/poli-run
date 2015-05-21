@@ -346,3 +346,5 @@ a random string, safe for use in URIs, of length 16
 6) Add some sample following data by updating the `populate` rake task
 
 - then reset the database, and populate it again
+
+7) Add routes for following and follower, linked to the User route

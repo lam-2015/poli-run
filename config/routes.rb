@@ -14,8 +14,12 @@ PoliRun::Application.routes.draw do
   # signout should be performed by using the HTTP DELETE request
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  # default routes for the Users controller
-  resources :users
+  # routes for the Users controller (default plus following and followers)
+  resources :users do
+    member do
+      get :following, :followers # ex.: get /users/1/followers
+    end
+  end
 
   # default routes for the Sessions controller (only new, create and destroy)
   resources :sessions, only: [:new, :create, :destroy]
