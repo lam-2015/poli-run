@@ -316,3 +316,12 @@ a random string, safe for use in URIs, of length 16
 - add a link for deleting a post in the `post` partial (in `app/views/posts`), similar to the one used for deleting a user
 - add a `before_filter` in the Posts controller to check if the user is allowed to delete the desired post (`correct_user`)
 - define the `correct_user` private method in the Post controller
+
+### Following Users (LAB 7) ###
+
+1) Generate a Relationship model for followers and followed users
+
+- `rails generate model Relationship follower_id:integer followed_id:integer` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- add three indexes on `follower_id` and `followed_id` (by acting on the migration), one for each of them and one for ensuring that a user cannot follow another user more than one time
+- remove `follower_id` from the list of accessible attributes of the model
+- migrate the whole
