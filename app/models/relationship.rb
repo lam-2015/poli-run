@@ -17,4 +17,9 @@ class Relationship < ActiveRecord::Base
 
   # a relationship belongs to a followed user (that is represented by the User model)
   belongs_to :followed, class_name: 'User'
+
+  # both model attributes must be always present...
+  validates :follower_id, presence: true
+  validates :followed_id, presence: true
+
 end
