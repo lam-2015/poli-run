@@ -342,3 +342,7 @@ a random string, safe for use in URIs, of length 16
 
 - a user has many "reverse" relationships
 - a user has many followers through the previously defined "reverse" relationships table
+
+6) Add some sample following data by updating the `populate` rake task
+
+- then reset the database, and populate it again
