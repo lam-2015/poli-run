@@ -368,3 +368,6 @@ a random string, safe for use in URIs, of length 16
 - add two new actions in the User controller for following and follower (based on previously created routes)
 - add `show_follow.html.erb` in the `view/users` folder
 - add a `_user.html.erb` partial in the `view/users` folder to avoid code replication (update the `index.html.erb` view too)
+
+11) Create the Relationships controller with the `create` and `destroy` actions (by hand)
+- a user must be signed in for follow/unfollow someone... add a `before_filter`
