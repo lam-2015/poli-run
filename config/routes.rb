@@ -21,6 +21,9 @@ PoliRun::Application.routes.draw do
     end
   end
 
+  # default routes for the Relationship controller (only create and destroy) - needed to build follow/unfollow relations
+  resources :relationships, only: [:create, :destroy]
+
   # default routes for the Sessions controller (only new, create and destroy)
   resources :sessions, only: [:new, :create, :destroy]
 
