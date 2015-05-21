@@ -377,3 +377,11 @@ a random string, safe for use in URIs, of length 16
 - edit the `_follow.html.erb` and `_unfollow.html.erb` partials to support javascript (add `remote: true` to the `form_for` method)
 - update the Relationship controller to reload the destination page by using ajax
 - create the javascript files corresponding to the two actions in `view/relationships`
+
+13) Implement the status feed (i.e., the wall, ex. 4)
+
+- we want to show, in the home page of a signed in user, her posts and posts from their followed users
+- update the User model by defining a `feed` method to get these posts
+- update the Post model to implement the method called by the User model for the wall
+- add the status feed in the home page view/action, as a partial in the `view\shared`
+- update the `create` action in the Posts controller to prepare a data structure for properly show the feed items

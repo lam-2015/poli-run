@@ -69,6 +69,11 @@ class User < ActiveRecord::Base
     relationships.find_by_followed_id(other_user.id).destroy
   end
 
+  # get the posts to be shown in the wall
+  def feed
+    Post.from_users_followed_by(self)
+  end
+
 
   # private methods
   private
