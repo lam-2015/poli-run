@@ -348,3 +348,9 @@ a random string, safe for use in URIs, of length 16
 - then reset the database, and populate it again
 
 7) Add routes for following and follower, linked to the User route
+
+8) Add some user statistics (e.g., number of followers and followed users)
+
+- create the `_stats.html.erb` partial in the `shared` folder
+- include the partial in the home page and in the user profile
+- update the stylesheet
