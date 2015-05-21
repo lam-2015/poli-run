@@ -29,6 +29,12 @@ class User < ActiveRecord::Base
   # since followed_users does not exist, we need to give to Rails the right column name in the relationships column (with source: "followed_id")
   has_many :followed_users, through: :relationships, source: :followed
 
+  # each user can have many "reverse" relationships (by reading in the opposite way the Relationship model)
+  has_many :reverse_relationships, foreign_key: 'followed_id', class_name: 'Relationship', dependent: :destroy
+
+  # each user can have many followers, through reverse relationships
+  has_many :followers, through: :reverse_relationships
+
   # put the email in downcase before saving the user
   before_save { |user| user.email = email.downcase }
 
