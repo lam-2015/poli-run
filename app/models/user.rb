@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   # we need to explicitly define a foreign key since, otherwise, Rails looks for a relationship_id column (that not exists)
   has_many :relationships, foreign_key: 'follower_id', dependent: :destroy
 
+  # each user can have many followed users, through the relationships table
+  # since followed_users does not exist, we need to give to Rails the right column name in the relationships column (with source: "followed_id")
+  has_many :followed_users, through: :relationships, source: :followed
+
   # put the email in downcase before saving the user
   before_save { |user| user.email = email.downcase }
 
@@ -43,6 +47,21 @@ class User < ActiveRecord::Base
   # password must have a minimum length of 8 chars
   # password and password_confirmation presence is enforced by has_secure_password
   validates :password, length: { minimum: 8 }
+
+  # is the current user following the given user?
+  def following?(other_user)
+    relationships.find_by_followed_id(other_user.id)
+  end
+
+  # follow a given user
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  # unfollow a given user
+  def unfollow!(other_user)
+    relationships.find_by_followed_id(other_user.id).destroy
+  end
 
 
   # private methods
