@@ -2,6 +2,8 @@ class CreateRoutes < ActiveRecord::Migration
   def change
     create_table :routes do |t|
       t.string :name
+      t.string :departure
+      t.string :arrival
       t.float :departure_lat
       t.float :departure_lng
       t.float :arrival_lat

@@ -4,6 +4,8 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string(255)
+#  departure     :string(255)
+#  arrival       :string(255)
 #  departure_lat :float
 #  departure_lng :float
 #  arrival_lat   :float
@@ -11,14 +13,13 @@
 #  difficulty    :string(255)
 #  distance      :float
 #  time          :integer
+#  user_id       :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
 
 class Route < ActiveRecord::Base
   attr_accessible :departure, :arrival, :arrival_lat, :arrival_lng, :departure_lat, :departure_lng, :difficulty, :distance, :name, :time
-  # non-persistent attributes
-  attr_accessor :departure, :arrival
 
   # link between addresses and their coordinates
   geocoded_by :departure, :latitude => :departure_lat, :longitude => :departure_lng

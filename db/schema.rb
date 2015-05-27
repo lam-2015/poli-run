@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20150527141233) do
 
   create_table "routes", :force => true do |t|
     t.string   "name"
+    t.string   "departure"
+    t.string   "arrival"
     t.float    "departure_lat"
     t.float    "departure_lng"
     t.float    "arrival_lat"

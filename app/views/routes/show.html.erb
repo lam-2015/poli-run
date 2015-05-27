@@ -19,8 +19,8 @@
     <div id="map"></div>
 
     <div>
-      <p><strong>From:</strong> <%= Geocoder.address [@route.departure_lat, @route.departure_lng] %></p>
-      <p><strong>To:</strong><%= Geocoder.address [@route.arrival_lat, @route.arrival_lng] %></p>
+      <p><strong>From:</strong> <%= @route.departure %></p>
+      <p><strong>To:</strong> <%= @route.arrival %></p>
       <p><strong>Difficulty level:</strong> <%= @route.difficulty %></p>
       <p><strong>Distance:</strong> <%= @route.distance %> km</p>
       <p><strong>Time needed:</strong> <%= @route.time %> minutes</p>
