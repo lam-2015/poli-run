@@ -385,3 +385,41 @@ a random string, safe for use in URIs, of length 16
 - update the Post model to implement the method called by the User model for the wall
 - add the status feed in the home page view/action, as a partial in the `view\shared`
 - update the `create` action in the Posts controller to prepare a data structure for properly show the feed items
+
+### Running Routes (LAB 8) ###
+
+1) Generate a Route model for the running routes
+
+- `rails generate model Route name:string departure_lat:float departure_lng:float arrival_lat:float arrival_lng:float difficulty:string distance:float time:integer user_id:integer` (or from the RubyMine menu *Tools > Run Rails Generator...*)
+- add an index to help retrieve all the routes associated to a given user in reverse order of creation
+- migrate the new model!
+
+2) Add some gems to the Gemfile (and perform a `bundle install`)
+
+- `geocoder` for getting latitude and longitude from a real address
+- `gmaps4rails` for an high-level interface to Google Maps
+- `underscore-rails` (needed by `gmaps4rails`)
+
+3) Add two new variables to the Route model: `departure` and `arrival`, for storing the respective addresses, and the other customizations needed by `geocoder` to the same model
+
+4) Add the javascript dependencies and source code for the `gmaps4rails` gem (as described at [https://github.com/apneadiving/Google-Maps-for-Rails](https://github.com/apneadiving/Google-Maps-for-Rails)
+
+5) Validate the Route model
+
+- all the attributes must be always present
+- the route name must be unique
+
+6) Link routes with users
+
+- add `belongs_to :user` to the Route model
+- add `has_many :routes` to the User model
+- set a descending order (newest to oldest) from routes, add `default_scope order: 'routes.created_at DESC` to the Route model
+- if a user is destroyed, all her routes must be also destroyed: update the relationship between users and routes in the User model
+
+7) Create a Routes controller with all the needed methods
+
+8) Add routes for the running routes, linked to the User route
+
+9) Add all the needed views (new, show, index)
+
+10) Add custom CSS and javascript to display the map in the `show` view of the Routes controller

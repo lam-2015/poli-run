@@ -14,4 +14,7 @@
 //= require jquery_ujs
 // Loads all Bootstrap javascripts
 //= require bootstrap
+// gmaps4rails javascripts
+//= require underscore
+//= require gmaps/google
 //= require_tree .

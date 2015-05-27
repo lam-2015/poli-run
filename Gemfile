@@ -40,6 +40,11 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.10'
 
+# Google Maps and geocoder
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails' # needed by gmaps4rails
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

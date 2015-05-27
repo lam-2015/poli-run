@@ -1,0 +1,10 @@
+<li>
+    <strong><%= link_to route.name, user_route_path(route.user, route) %></strong>
+    <span class="content">Summary: <%= route.distance %> km, <%= route.time %> minutes long and with <%= route.difficulty %> difficulty.</span>
+    <span class="timestamp">
+        Posted <%= time_ago_in_words(route.created_at) %> ago
+    </span>
+    <% if current_user?(route.user) %>
+    | <%= link_to 'delete', user_route_path(route.user, route), method: :delete, data: { confirm: 'Are you sure?' }, title: route.name %>
+    <% end %>
+</li>

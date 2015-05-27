@@ -15,4 +15,10 @@
     </strong>
     followers
   </a>
+  <a href="<%= user_routes_path(@user) %>">
+    <strong id="routes" class="stat">
+      <%= @user.routes.count %>
+    </strong>
+    routes
+  </a>
 </div>

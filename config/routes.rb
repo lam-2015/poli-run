@@ -19,6 +19,7 @@ PoliRun::Application.routes.draw do
     member do
       get :following, :followers # ex.: get /users/1/followers
     end
+    resources :routes, only: [:new, :create, :destroy, :show, :index] # ex.: get /users/1/routes/1
   end
 
   # default routes for the Relationship controller (only create and destroy) - needed to build follow/unfollow relations
